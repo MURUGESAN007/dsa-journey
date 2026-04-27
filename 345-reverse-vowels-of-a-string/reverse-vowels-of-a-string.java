@@ -3,17 +3,17 @@ class Solution {
         char arr[] = s.toCharArray();
         int l=0,r=arr.length-1;
         while(l<r){
+            while(l<r && !isVowel(arr[l])){
+                l++;
+            }
+            while(l<r && !isVowel(arr[r])){
+                r--;
+            }
             if(isVowel(arr[l]) && isVowel(arr[r])){
                 char t = arr[l];
                 arr[l] = arr[r];
                 arr[r] = t;
                 l++;
-                r--;
-            }
-            else if(!isVowel(arr[l])){
-                l++;
-            }
-            else if(!isVowel(arr[r])){
                 r--;
             }
         }
