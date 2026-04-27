@@ -20,7 +20,8 @@ class Solution {
         return new String(arr);
     }
     public boolean isVowel(char c){
-        return "aeiouAEIOU".contains(String.valueOf(c))? true:false;
+        c = Character.toLowerCase(c);
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }
 
 }
