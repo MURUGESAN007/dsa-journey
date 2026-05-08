@@ -14,7 +14,14 @@ class Solution {
                 sFreq[s.charAt(left) - 'a']--;
                 left++;
             }
-            if(Arrays.equals(sFreq,pFreq)){
+            boolean isMatch = true;
+            for(int i=0;i<26;i++){
+                if(pFreq[i] != sFreq[i]){
+                    isMatch=false;
+                    break;
+                }
+            }
+            if(isMatch){
                 li.add(left);
             }
         }
