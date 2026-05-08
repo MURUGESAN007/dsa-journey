@@ -10,7 +10,7 @@ class Solution {
         int left = 0;
         for(int right=0;right<s.length();right++){
             sFreq[s.charAt(right) - 'a']++;
-            if(right-left+1 > p.length()){
+            while(right-left+1 > p.length()){
                 sFreq[s.charAt(left) - 'a']--;
                 left++;
             }
