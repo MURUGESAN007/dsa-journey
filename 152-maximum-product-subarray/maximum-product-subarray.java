@@ -10,7 +10,7 @@ class Solution {
             prefix *= nums[i];
             sufix *= nums[nums.length - i - 1];
 
-            maxSum = Math.max(maxSum,(Math.max(prefix,sufix)));
+            maxSum = Math.max(maxSum,Math.max(prefix,sufix));
         }
         return maxSum;
     }
