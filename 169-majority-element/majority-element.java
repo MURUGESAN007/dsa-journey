@@ -1,16 +1,14 @@
 class Solution {
     public int majorityElement(int[] nums) {
-        int count = 0,candidate = 0;
+        int max=0,ans = 0;
+        Map<Integer,Integer> map = new HashMap<>();
         for(int n : nums){
-            if(count == 0){
-                candidate = n;
-            }
-            if(n == candidate){
-                count++;
-            }else{
-                count--;
+            map.put(n,map.getOrDefault(n,0) + 1);
+            if(map.get(n) > max){
+                ans = n;
+                max = Math.max(max,map.get(n));
             }
         }
-        return candidate;
+        return ans;
     }
 }
